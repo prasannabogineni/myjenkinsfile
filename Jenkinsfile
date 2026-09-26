@@ -3,7 +3,7 @@ pipeline {
     agent any
 
     environment {
-        PATH = "/opt/maven/bin:$PATH"
+        PATH = "/opt/maven/bin:${env.PATH}"
     }
 
     stages {
@@ -11,7 +11,7 @@ pipeline {
         stage('Git Clone') {
             steps {
                 git branch: 'main',
-                    url: 'https://github.com/prasannabogineni/myjenkinsfile.git'
+                    url: 'https://github.com/prasannabogineni/war-web-project.git'
             }
         }
 
